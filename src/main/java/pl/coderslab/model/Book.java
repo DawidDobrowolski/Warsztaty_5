@@ -1,8 +1,15 @@
 package pl.coderslab.model;
 
+import javax.persistence.*;
+
+@Entity
 public class Book {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    @Transient
     private static long nextID = 1;
     private String isbn;
     private String title;
@@ -73,14 +80,6 @@ public class Book {
     public void setType(String type) {
         this.type = type;
     }
-
-//    private long highestId() {
-//        MemoryBookService memoryBookService = new MemoryBookService();
-//        return memoryBookService.getList().stream()
-//                .sorted((b1, b2) -> Long.compare(b1.id, b2.id))
-//                .findFirst().get().getId();
-//
-//    }
 
 
 }
