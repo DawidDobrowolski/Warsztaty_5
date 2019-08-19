@@ -18,19 +18,7 @@ public class Book {
     private String type;
 
 
-    public Book(String isbn, String title, String author, String publisher, String type) {
-        this.id = nextID;
-        this.isbn = isbn;
-        this.title = title;
-        this.author = author;
-        this.publisher = publisher;
-        this.type = type;
-        nextID++;
-    }
-
     public Book() {
-        this.id = nextID;
-        nextID++;
     }
 
     public long getId() {
