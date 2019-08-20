@@ -20,11 +20,6 @@ public class BookController {
         this.bookDao = bookDao;
     }
 
-    @RequestMapping("/hello")
-    public String hello() {
-        return "{hello: World}";
-    }
-
 
     @GetMapping("/")
     public List<Book> getBooks() {

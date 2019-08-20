@@ -9,12 +9,15 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Transient
-    private static long nextID = 1;
     private String isbn;
+
     private String title;
-    private String author;
+
+    @ManyToOne
+    private Author author;
+
     private String publisher;
+
     private String type;
 
 
@@ -45,11 +48,11 @@ public class Book {
         this.title = title;
     }
 
-    public String getAuthor() {
+    public Author getAuthor() {
         return author;
     }
 
-    public void setAuthor(String author) {
+    public void setAuthor(Author author) {
         this.author = author;
     }
 
