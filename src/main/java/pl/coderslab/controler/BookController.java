@@ -32,8 +32,8 @@ public class BookController {
     }
 
     @PostMapping("/")
-    public void createBook(@RequestBody Book book) {
-        bookDao.saveBook(book);
+    public Book createBook(@RequestBody Book book) {
+        return bookDao.saveBook(book);
     }
 
     @PutMapping("/{id}")
