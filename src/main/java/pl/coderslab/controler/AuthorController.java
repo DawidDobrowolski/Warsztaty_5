@@ -31,8 +31,8 @@ public class AuthorController {
     }
 
     @PostMapping("/")
-    public void createAuthor(@RequestBody Author author) {
-        authorDao.saveAuthor(author);
+    public Author createAuthor(@RequestBody Author author) {
+       return authorDao.saveAuthor(author);
     }
 
     @PutMapping("/{id}")

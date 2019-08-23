@@ -16,8 +16,9 @@ public class AuthorDao {
     EntityManager entityManager;
 
 
-    public void saveAuthor(Author entity) {
+    public Author saveAuthor(Author entity) {
         entityManager.persist(entity);
+        return entity;
     }
 
     public Author findById(long id) {
