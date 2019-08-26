@@ -36,9 +36,9 @@ public class AuthorController {
     }
 
     @PutMapping("/{id}")
-    public void editAuthor(@RequestBody Author author, @PathVariable long id) {
+    public Author editAuthor(@RequestBody Author author, @PathVariable long id) {
         author.setId(id);
-        authorDao.update(author);
+        return authorDao.update(author);
     }
 
     @DeleteMapping("/{id}")

@@ -16,7 +16,7 @@ public class BookController {
     private BookDao bookDao;
 
     @Autowired
-    public BookController( BookDao bookDao) {
+    public BookController(BookDao bookDao) {
         this.bookDao = bookDao;
     }
 
@@ -37,9 +37,9 @@ public class BookController {
     }
 
     @PutMapping("/{id}")
-    public void editBook(@RequestBody Book book, @PathVariable long id) {
+    public Book editBook(@RequestBody Book book, @PathVariable long id) {
         book.setId(id);
-        bookDao.update(book);
+        return bookDao.update(book);
     }
 
 

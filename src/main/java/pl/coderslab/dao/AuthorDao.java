@@ -31,8 +31,9 @@ public class AuthorDao {
                 "SELECT a FROM Author a").getResultList();
     }
 
-    public void update(Author entity) {
+    public Author update(Author entity) {
         entityManager.merge(entity);
+        return entity;
     }
 
 

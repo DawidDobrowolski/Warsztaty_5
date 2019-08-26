@@ -32,8 +32,9 @@ public class BookDao {
                 "SELECT b FROM Book b").getResultList();
     }
 
-    public void update(Book entity) {
+    public Book update(Book entity) {
         entityManager.merge(entity);
+        return entity;
     }
 
 
